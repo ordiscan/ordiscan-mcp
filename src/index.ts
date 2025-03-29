@@ -9,6 +9,7 @@ import {
 import { z } from "zod";
 
 import INSCRIPTION_INFO from "./actions/inscription-info.js";
+import SAT_INFO from "./actions/sat-info.js";
 
 const server = new Server(
   {
@@ -24,7 +25,7 @@ const server = new Server(
 
 server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
-    tools: [INSCRIPTION_INFO.tool],
+    tools: [INSCRIPTION_INFO.tool, SAT_INFO.tool],
   };
 });
 
@@ -35,13 +36,14 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     switch (request.params.name) {
-      case INSCRIPTION_INFO.tool.name: {
+      case INSCRIPTION_INFO.tool.name:
         return INSCRIPTION_INFO.handler(request);
-      }
 
-      default: {
+      case SAT_INFO.tool.name:
+        return SAT_INFO.handler(request);
+
+      default:
         throw new Error(`Unknown tool: ${request.params.name}`);
-      }
     }
   } catch (error) {
     if (error instanceof z.ZodError) {
