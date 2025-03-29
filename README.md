@@ -32,7 +32,7 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
     "ordiscan-server": {
       "command": "node",
       "args": [
-        "/Users/tristan/dev/tools/agents/ordiscan-mcp/build/index.js"
+        "/path/to/ordiscan-mcp/build/index.js"
       ],
       "env": {
         "ORDISCAN_API_KEY": "YOUR_API_KEY"
