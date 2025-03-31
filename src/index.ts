@@ -11,6 +11,7 @@ import { z } from "zod";
 import INSCRIPTION_INFO from "./actions/inscription-info.js";
 import SAT_INFO from "./actions/sat-info.js";
 import RUNE_INFO from "./actions/rune-info.js";
+import ADDRESS_RARE_SATS from "./actions/address/rare-sat-balance.js";
 
 const server = new Server(
   {
@@ -26,7 +27,12 @@ const server = new Server(
 
 server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
-    tools: [INSCRIPTION_INFO.tool, SAT_INFO.tool, RUNE_INFO.tool],
+    tools: [
+      INSCRIPTION_INFO.tool,
+      SAT_INFO.tool,
+      RUNE_INFO.tool,
+      ADDRESS_RARE_SATS.tool,
+    ],
   };
 });
 
@@ -45,6 +51,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       case RUNE_INFO.tool.name:
         return RUNE_INFO.handler(request);
+
+      case ADDRESS_RARE_SATS.tool.name:
+        return ADDRESS_RARE_SATS.handler(request);
 
       default:
         throw new Error(`Unknown tool: ${request.params.name}`);
