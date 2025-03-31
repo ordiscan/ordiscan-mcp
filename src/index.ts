@@ -10,6 +10,7 @@ import { z } from "zod";
 
 import INSCRIPTION_INFO from "./actions/inscription-info.js";
 import SAT_INFO from "./actions/sat-info.js";
+import RUNE_INFO from "./actions/rune-info.js";
 
 const server = new Server(
   {
@@ -25,7 +26,7 @@ const server = new Server(
 
 server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
-    tools: [INSCRIPTION_INFO.tool, SAT_INFO.tool],
+    tools: [INSCRIPTION_INFO.tool, SAT_INFO.tool, RUNE_INFO.tool],
   };
 });
 
@@ -41,6 +42,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       case SAT_INFO.tool.name:
         return SAT_INFO.handler(request);
+
+      case RUNE_INFO.tool.name:
+        return RUNE_INFO.handler(request);
 
       default:
         throw new Error(`Unknown tool: ${request.params.name}`);
