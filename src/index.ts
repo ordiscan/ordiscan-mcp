@@ -11,9 +11,20 @@ import { z } from "zod";
 import INSCRIPTION_INFO from "./actions/inscription-info.js";
 import SAT_INFO from "./actions/sat-info.js";
 import RUNE_INFO from "./actions/rune-info.js";
+import ADDRESS_INSCRIPTIONS from "./actions/address/inscription-ids.js";
+import ADDRESS_RUNES from "./actions/address/rune-balance.js";
+import ADDRESS_BRC20 from "./actions/address/brc20-balance.js";
 import ADDRESS_RARE_SATS from "./actions/address/rare-sat-balance.js";
 
-const actions = [INSCRIPTION_INFO, SAT_INFO, RUNE_INFO, ADDRESS_RARE_SATS];
+const actions = [
+  INSCRIPTION_INFO,
+  SAT_INFO,
+  RUNE_INFO,
+  ADDRESS_INSCRIPTIONS,
+  ADDRESS_RUNES,
+  ADDRESS_BRC20,
+  ADDRESS_RARE_SATS,
+];
 
 const server = new Server(
   {
