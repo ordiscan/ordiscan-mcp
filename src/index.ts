@@ -11,6 +11,7 @@ import { z } from "zod";
 import INSCRIPTION_INFO from "./actions/inscription-info.js";
 import SAT_INFO from "./actions/sat-info.js";
 import RUNE_INFO from "./actions/rune-info.js";
+import COLLECTION_INFO from "./actions/collection/info.js";
 import ADDRESS_INSCRIPTIONS from "./actions/address/inscription-ids.js";
 import ADDRESS_RUNES from "./actions/address/rune-balance.js";
 import ADDRESS_BRC20 from "./actions/address/brc20-balance.js";
@@ -20,6 +21,7 @@ const actions = [
   INSCRIPTION_INFO,
   SAT_INFO,
   RUNE_INFO,
+  COLLECTION_INFO,
   ADDRESS_INSCRIPTIONS,
   ADDRESS_RUNES,
   ADDRESS_BRC20,
