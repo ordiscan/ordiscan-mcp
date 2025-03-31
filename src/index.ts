@@ -13,6 +13,8 @@ import SAT_INFO from "./actions/sat-info.js";
 import RUNE_INFO from "./actions/rune-info.js";
 import ADDRESS_RARE_SATS from "./actions/address/rare-sat-balance.js";
 
+const actions = [INSCRIPTION_INFO, SAT_INFO, RUNE_INFO, ADDRESS_RARE_SATS];
+
 const server = new Server(
   {
     name: "ordiscan-mcp",
@@ -27,12 +29,7 @@ const server = new Server(
 
 server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
-    tools: [
-      INSCRIPTION_INFO.tool,
-      SAT_INFO.tool,
-      RUNE_INFO.tool,
-      ADDRESS_RARE_SATS.tool,
-    ],
+    tools: actions.map((action) => action.tool),
   };
 });
 
@@ -42,22 +39,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       throw new Error("Arguments are required");
     }
 
-    switch (request.params.name) {
-      case INSCRIPTION_INFO.tool.name:
-        return INSCRIPTION_INFO.handler(request);
+    const action = actions.find(
+      (action) => action.tool.name === request.params.name,
+    );
 
-      case SAT_INFO.tool.name:
-        return SAT_INFO.handler(request);
-
-      case RUNE_INFO.tool.name:
-        return RUNE_INFO.handler(request);
-
-      case ADDRESS_RARE_SATS.tool.name:
-        return ADDRESS_RARE_SATS.handler(request);
-
-      default:
-        throw new Error(`Unknown tool: ${request.params.name}`);
+    if (!action) {
+      throw new Error(`Unknown tool: ${request.params.name}`);
     }
+
+    return action.handler(request);
   } catch (error) {
     if (error instanceof z.ZodError) {
       throw new Error(
