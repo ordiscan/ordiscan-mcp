@@ -12,6 +12,8 @@ import INSCRIPTION_INFO from "./actions/inscription-info.js";
 import SAT_INFO from "./actions/sat-info.js";
 import RUNE_INFO from "./actions/rune-info.js";
 import COLLECTION_INFO from "./actions/collection/info.js";
+import TX_INSCRIPTIONS from "./actions/tx/inscriptions.js";
+import TX_RUNES from "./actions/tx/runes.js";
 import ADDRESS_INSCRIPTIONS from "./actions/address/inscription-ids.js";
 import ADDRESS_RUNES from "./actions/address/rune-balance.js";
 import ADDRESS_BRC20 from "./actions/address/brc20-balance.js";
@@ -26,6 +28,8 @@ const actions = [
   ADDRESS_RUNES,
   ADDRESS_BRC20,
   ADDRESS_RARE_SATS,
+  TX_INSCRIPTIONS,
+  TX_RUNES,
 ];
 
 const server = new Server(
