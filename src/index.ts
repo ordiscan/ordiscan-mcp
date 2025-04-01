@@ -8,9 +8,12 @@ import {
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
 
-import INSCRIPTION_INFO from "./actions/inscription-info.js";
+import INSCRIPTION_INFO from "./actions/inscription/info.js";
+import INSCRIPTION_TRAITS from "./actions/inscription/traits.js";
 import SAT_INFO from "./actions/sat-info.js";
-import RUNE_INFO from "./actions/rune-info.js";
+import RUNE_INFO from "./actions/rune/info.js";
+import RUNE_MARKET_INFO from "./actions/rune/market-info.js";
+import RUNE_NAME_UNLOCK from "./actions/rune/unlock-date.js";
 import COLLECTION_INFO from "./actions/collection/info.js";
 import TX_INSCRIPTIONS from "./actions/tx/inscriptions.js";
 import TX_RUNES from "./actions/tx/runes.js";
@@ -21,8 +24,11 @@ import ADDRESS_RARE_SATS from "./actions/address/rare-sat-balance.js";
 
 const actions = [
   INSCRIPTION_INFO,
+  INSCRIPTION_TRAITS,
   SAT_INFO,
   RUNE_INFO,
+  RUNE_MARKET_INFO,
+  RUNE_NAME_UNLOCK,
   COLLECTION_INFO,
   ADDRESS_INSCRIPTIONS,
   ADDRESS_RUNES,
