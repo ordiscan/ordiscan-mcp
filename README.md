@@ -12,10 +12,10 @@ To use with Claude Desktop, add the server config:
 ```json
 {
   "mcpServers": {
-    "ordiscan-server": {
-      "command": "node",
+    "ordiscan": {
+      "command": "npx",
       "args": [
-        "/path/to/ordiscan-mcp/build/index.js"
+        "ordiscan-mcp@latest"
       ],
       "env": {
         "ORDISCAN_API_KEY": "YOUR_API_KEY"

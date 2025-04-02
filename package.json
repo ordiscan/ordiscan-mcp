@@ -1,6 +1,6 @@
 {
   "name": "ordiscan-mcp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "MCP server for retrieving Ordinals data",
   "license": "MIT",
   "author": "t4t5",
