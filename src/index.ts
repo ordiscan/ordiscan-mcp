@@ -10,6 +10,7 @@ import { z } from "zod";
 
 import INSCRIPTION_INFO from "./actions/inscription/info.js";
 import INSCRIPTION_TRAITS from "./actions/inscription/traits.js";
+import INSCRIBE from "./actions/inscribe.js";
 import SAT_INFO from "./actions/sat-info.js";
 import RUNE_INFO from "./actions/rune/info.js";
 import RUNE_MARKET_INFO from "./actions/rune/market-info.js";
@@ -25,6 +26,7 @@ import ADDRESS_RARE_SATS from "./actions/address/rare-sat-balance.js";
 const actions = [
   INSCRIPTION_INFO,
   INSCRIPTION_TRAITS,
+  INSCRIBE,
   SAT_INFO,
   RUNE_INFO,
   RUNE_MARKET_INFO,
