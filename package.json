@@ -1,6 +1,6 @@
 {
   "name": "ordiscan-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "MCP server for retrieving Ordinals data",
   "license": "MIT",
   "author": "t4t5",
@@ -19,7 +19,7 @@
     "inspector": "npx @modelcontextprotocol/inspector build/index.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "0.6.0",
+    "@modelcontextprotocol/sdk": "^1.8.0",
     "ordiscan": "^1.1.0",
     "zod": "^3.23.8",
     "zod-to-json-schema": "^3.23.5"
