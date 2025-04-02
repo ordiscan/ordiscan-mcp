@@ -4,7 +4,7 @@
   "description": "MCP server for retrieving Ordinals data",
   "license": "MIT",
   "author": "t4t5",
-  "type": "module",
+  "type": "commonjs",
   "main": "build/index.js",
   "bin": {
     "ordiscan-mcp": "./build/index.js"
@@ -13,7 +13,7 @@
     "build"
   ],
   "scripts": {
-    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "build": "tsc && esbuild build/index.js --bundle --platform=node --outfile=build/index.bundled.js && mv build/index.bundled.js build/index.js && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
     "prepare": "npm run build",
     "watch": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector build/index.js"
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.24",
+    "esbuild": "^0.25.2",
     "typescript": "^5.3.3"
   }
 }
