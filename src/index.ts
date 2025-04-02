@@ -8,10 +8,12 @@ import {
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
 
+import INSCRIPTION_LIST from "./actions/inscription/list.js";
 import INSCRIPTION_INFO from "./actions/inscription/info.js";
 import INSCRIPTION_TRAITS from "./actions/inscription/traits.js";
 import INSCRIBE from "./actions/inscribe.js";
 import SAT_INFO from "./actions/sat-info.js";
+import RUNE_LIST from "./actions/rune/list.js";
 import RUNE_INFO from "./actions/rune/info.js";
 import RUNE_MARKET_INFO from "./actions/rune/market-info.js";
 import RUNE_NAME_UNLOCK from "./actions/rune/unlock-date.js";
@@ -24,10 +26,12 @@ import ADDRESS_BRC20 from "./actions/address/brc20-balance.js";
 import ADDRESS_RARE_SATS from "./actions/address/rare-sat-balance.js";
 
 const actions = [
+  INSCRIPTION_LIST,
   INSCRIPTION_INFO,
   INSCRIPTION_TRAITS,
   INSCRIBE,
   SAT_INFO,
+  RUNE_LIST,
   RUNE_INFO,
   RUNE_MARKET_INFO,
   RUNE_NAME_UNLOCK,
