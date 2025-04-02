@@ -11,7 +11,7 @@ import { z } from "zod";
 import INSCRIPTION_LIST from "./actions/inscription/list.js";
 import INSCRIPTION_INFO from "./actions/inscription/info.js";
 import INSCRIPTION_TRAITS from "./actions/inscription/traits.js";
-import INSCRIBE from "./actions/inscribe.js";
+import INSCRIBE from "./actions/inscription/inscribe.js";
 import SAT_INFO from "./actions/sat-info.js";
 import RUNE_LIST from "./actions/rune/list.js";
 import RUNE_INFO from "./actions/rune/info.js";
