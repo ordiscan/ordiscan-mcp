@@ -42,3 +42,5 @@ To use with Claude Desktop, add the server config:
   }
 }
 ```
+
+Note that you need an Ordiscan API key, which you can obtain for free [here](https://ordiscan.com/docs/api).
