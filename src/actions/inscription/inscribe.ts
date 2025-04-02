@@ -2,7 +2,7 @@ import { z } from "zod";
 import { zodToJsonSchema } from "zod-to-json-schema";
 
 import { McpAction, ToolInputSchema } from "../../types.js";
-import { getOrdiscanClient } from "../../ordiscan-client.js";
+import { getOrdiscanClient, ORDISCAN_URL } from "../../ordiscan-client.js";
 
 export const InscribeInputSchema = z.object({
   content: z.string(),
@@ -29,7 +29,7 @@ const action: McpAction = {
 
     const typeSlug = contentType === "text/plain" ? "text" : "html";
 
-    const url = `http://localhost:3000/inscribe/${typeSlug}/${identifier}?pay=true`;
+    const url = `${ORDISCAN_URL}/inscribe/${typeSlug}/${identifier}?pay=true`;
 
     return {
       content: [

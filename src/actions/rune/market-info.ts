@@ -2,7 +2,7 @@ import { zodToJsonSchema } from "zod-to-json-schema";
 
 import { McpAction, ToolInputSchema } from "../../types.js";
 import { getOrdiscanClient } from "../../ordiscan-client.js";
-import { RuneInputSchema } from "./info.js";
+import { RuneInputSchema, trimRuneName } from "./info.js";
 
 const action: McpAction = {
   tool: {
@@ -15,7 +15,7 @@ const action: McpAction = {
     const args = RuneInputSchema.parse(request.params.arguments);
 
     const info = await getOrdiscanClient().rune.getMarketInfo({
-      name: args.runeName.replace(/•/g, ""),
+      name: trimRuneName(args.runeName),
     });
 
     return {

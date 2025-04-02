@@ -8,6 +8,10 @@ export const RuneInputSchema = z.object({
   runeName: z.string(),
 });
 
+export const trimRuneName = (runeName: string) => {
+  return runeName.replace(/[^\w\d]/g, "");
+};
+
 const action: McpAction = {
   tool: {
     name: "rune_info",
@@ -19,7 +23,7 @@ const action: McpAction = {
     const args = RuneInputSchema.parse(request.params.arguments);
 
     const info = await getOrdiscanClient().rune.getInfo({
-      name: args.runeName.replace(/•/g, ""),
+      name: trimRuneName(args.runeName),
     });
 
     return {

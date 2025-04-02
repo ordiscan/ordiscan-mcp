@@ -15,6 +15,7 @@ import INSCRIBE from "./actions/inscription/inscribe.js";
 import SAT_INFO from "./actions/sat-info.js";
 import RUNE_LIST from "./actions/rune/list.js";
 import RUNE_INFO from "./actions/rune/info.js";
+import RUNE_MINT from "./actions/rune/mint.js";
 import RUNE_MARKET_INFO from "./actions/rune/market-info.js";
 import RUNE_NAME_UNLOCK from "./actions/rune/unlock-date.js";
 import COLLECTION_INFO from "./actions/collection/info.js";
@@ -33,6 +34,7 @@ const actions = [
   SAT_INFO,
   RUNE_LIST,
   RUNE_INFO,
+  RUNE_MINT,
   RUNE_MARKET_INFO,
   RUNE_NAME_UNLOCK,
   COLLECTION_INFO,

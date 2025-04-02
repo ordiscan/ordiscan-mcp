@@ -8,3 +8,5 @@ export const getOrdiscanClient = () => {
 
   return new Ordiscan(process.env.ORDISCAN_API_KEY);
 };
+
+export const ORDISCAN_URL = "https://ordiscan.com";
