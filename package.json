@@ -1,13 +1,13 @@
 {
   "name": "ordiscan-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server for retrieving Ordinals data",
   "license": "MIT",
   "author": "t4t5",
   "type": "module",
   "main": "build/index.js",
   "bin": {
-    "ordiscan": "./build/index.js"
+    "ordiscan-mcp": "./build/index.js"
   },
   "files": [
     "build"
