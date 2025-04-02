@@ -2,6 +2,8 @@
 
 A model context protocol server for getting information about Ordinals and Runes on Bitcoin
 
+https://github.com/user-attachments/assets/9dddacdf-add0-4a96-8444-5e0803e695a7
+
 ## Installation
 
 To use with Claude Desktop, add the server config:
