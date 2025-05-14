@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/ordiscan-ordiscan-mcp-badge.png)](https://mseep.ai/app/ordiscan-ordiscan-mcp)
+
 # Ordiscan MCP Server
 
 A model context protocol server for getting information about Ordinals and Runes on Bitcoin
